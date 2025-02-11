@@ -6,6 +6,8 @@
       "skipLibCheck": true,
       "esModuleInterop": true,
       "allowSyntheticDefaultImports": true,
+      "allowImportingTsExtensions": true,
+      "noEmit": true,
       "moduleResolution": "node",
       "isolatedModules": true,
       "strict": true,
