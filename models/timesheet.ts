@@ -16,4 +16,12 @@ export default class Timesheet extends Model {
             totalCost: this.number(0)
         }
     }
+
+    declare id: string;
+    declare userId: string;
+    declare lineItemId: string[];
+    declare description: string;
+    declare rate: number;
+    declare totalTime: number;
+    declare totalCost: number;
 }

@@ -12,4 +12,9 @@ export default class LineItem extends Model {
             timesheet: this.belongsTo(Timesheet, "timesheetId")
         }
     }
+
+    declare id: string;
+    declare date: Date;
+    declare minutes: number;
+    declare timesheetId: string;
 }

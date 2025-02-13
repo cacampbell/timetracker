@@ -1,8 +1,8 @@
 import axios from "axios"
 
 type Response<T> = {
-    success: boolean;
-    content: T;
+    success?: boolean;
+    content?: T;
     status?: number;
 }
 

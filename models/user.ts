@@ -9,4 +9,7 @@ export default class User extends Model {
             username: this.string("")
         }
     }
+
+    declare id: string;
+    declare username: string;
 }
