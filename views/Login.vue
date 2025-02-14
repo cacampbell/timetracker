@@ -3,6 +3,9 @@
     import { useUserStore } from "../stores/user"
     import { useRouter } from "vue-router";
 
+    import Button from "../components/Button.vue"
+    import Input from "../components/Input.vue"
+
     const router = useRouter()
 
     const userStore = useUserStore()
@@ -24,9 +27,9 @@
 
 <template>
     <form class="flex items-center flex-col" @submit.prevent="tryLogin">
-        <input class="rounded px-4 py-2 w-full border" v-model="username"/>
-        <input class="rounded px-4 py-2 w-full border mt-5" v-model="password"/>
-        <button type="submit" class="block px-4 py-2 text-white bg-blue-500 border-transparent mt-5" @click="tryLogin">Log In</button>
+        <Input v-model="username"/>
+        <Input class="mt-5" v-model="password"/>
+        <Button color="blue" type="submit" class="mt-5">Log In</Button>
         <router-link class="pt-5" :to="{ name: 'register' }">Register</router-link>
         <div class="text-red-500 mt-5" v-show="error != null">{{ error }}</div>
     </form>

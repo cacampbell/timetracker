@@ -1,5 +1,8 @@
 <script setup lang="ts">
     import { useRouter } from "vue-router"
+
+    import Button from "../components/Button.vue"
+
     const router = useRouter()
 
     function createTimesheet(): void {
@@ -13,15 +16,18 @@
 
 <template>
     <div class="flex flex-col items-center">
-        <button
-            class="block px-4 py-2 text-white bg-green-500 border-transparent"
+        <Button
+            type="button"
+            color="green"
             @click="createTimesheet">
             Create Timesheet
-        </button>
-        <button
-            class="block px-4 py-2 text-white bg-blue-500 border-transparent mt-5"
+        </Button>
+        <Button
+            type="button"
+            color="blue"
+            class="mt-5"
             @click="viewTimesheets">
             View My Timesheets
-        </button>
+        </Button>
     </div>
 </template>
