@@ -1,6 +1,9 @@
 <script setup lang="ts">
     import { ref } from "vue";
     import { useUserStore } from "../stores/user"
+    import { useRouter } from "vue-router";
+
+    const router = useRouter()
 
     const userStore = useUserStore()
     const username = ref("")
@@ -11,6 +14,7 @@
         try {
             error.value = null;
             await userStore.login(username.value, password.value)
+            router.push("home");
         } catch (err) {
             console.error(err);
             error.value = "Could not login :("

@@ -16,11 +16,11 @@ type LoginSuccess = {
 }
 
 async function register(username: string, password: string): Promise<Response<RegisterSuccess>> {
-    return await http.post<Response<RegisterSuccess>>("register", { username, password });
+    return await http.post<RegisterSuccess>("register", { username, password });
 }
 
 async function login(username: string, password: string): Promise<Response<LoginSuccess>> {
-    return await http.post<Response<LoginSuccess>>("login", { username, password });
+    return await http.post<LoginSuccess>("login", { username, password });
 }
 
 export default { register, login }

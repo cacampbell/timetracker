@@ -10,9 +10,8 @@ export const useUserStore = defineStore("user", () => {
     async function register(username: string, password: string): Promise<void> {
         const response = await Services.auth.register(username, password);
         if (response.status === 200) {
-            console.log(response)
-            currentUser.value = response.content!.user;
-            accessToken.value = response.content!.token;
+            currentUser.value = response.data.user;
+            accessToken.value = response.data.token;
         } else {
             throw new Error("Could not register.")
         }
@@ -21,8 +20,7 @@ export const useUserStore = defineStore("user", () => {
     async function login(username: string, password: string): Promise<void> {
         const response = await Services.auth.login(username, password);
         if (response.status === 200) {
-            console.log(response)
-            accessToken.value = response.content!.token;
+            accessToken.value = response.data.token;
         } else {
             throw new Error("Could not login.")
         }
