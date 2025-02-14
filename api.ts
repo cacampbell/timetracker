@@ -1,9 +1,8 @@
 import axios from "axios"
 
 type Response<T> = {
-    success?: boolean;
-    content?: T;
-    status?: number;
+    status: number;
+    data: T
 }
 
 const instance = axios.create({
