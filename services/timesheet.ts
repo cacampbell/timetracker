@@ -6,12 +6,12 @@ async function get(id: string): Promise<Response<Timesheet>> {
     return await http.get<Timesheet>(`timesheet/${id}`);
 }
 
-async function getTimesheetsForUser(UserId: string): Promise<Response<Timesheet[]>> {
-    return await http.get<Timesheet[]>(`timesheets-for-user/${UserId}`)
+async function getTimesheetsForUser(UserId: string): Promise<Response<{ timesheets: Timesheet[] }>> {
+    return await http.get<{ timesheets: Timesheet[] }>(`timesheets-for-user/${UserId}`)
 }
 
-async function getLineitemsForTimesheet(TimesheetId: string): Promise<Response<LineItem[]>> {
-    return await http.get<LineItem[]>(`lineitems-for-timesheet/${TimesheetId}`)
+async function getLineitemsForTimesheet(TimesheetId: string): Promise<Response<{ lineitems: LineItem[] }>> {
+    return await http.get<{ lineitems: LineItem[] }>(`lineitems-for-timesheet/${TimesheetId}`)
 }
 
 async function create(timesheet: Timesheet): Promise<Response<Timesheet>> {
@@ -26,4 +26,4 @@ async function remove(id: string): Promise<Response<void>> {
     return await http.delete<void>(`timesheet/${id}`);
 }
 
-export default { get, create, save, remove }
+export default { getTimesheetsForUser, getLineitemsForTimesheet, get, create, save, remove }

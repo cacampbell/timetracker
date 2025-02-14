@@ -1,8 +1,8 @@
 import Timesheet from "./timesheet.ts"
 
 export default interface LineItem {
-    id: string;
-    timesheetId?: string;
+    id?: string;
+    TimesheetId?: string;
     date: Date;
     minutes: number;
 }

@@ -1,5 +1,5 @@
 import timesheetController from "./services/timesheet";
-import lineitemController from "./services/timesheet";
+import lineitemController from "./services/lineitem";
 import userController from "./services/user";
 import authController from "./services/auth";
 
