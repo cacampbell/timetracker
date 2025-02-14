@@ -3,7 +3,7 @@ import { defineStore } from "pinia";
 import { Services } from "services";
 import { ref } from "vue";
 
-export default defineStore("user", () => {
+export const useUserStore = defineStore("user", () => {
     const currentUser = ref<User | null>(null);
     const accessToken = ref<string | null>(null);
 
