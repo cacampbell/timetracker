@@ -13,6 +13,13 @@ type RegisterSuccess = {
 
 type LoginSuccess = {
     token: string;
+    user: {
+        createdAt: string;
+        hashedPassword: string;
+        id: string;
+        updatedAt: string;
+        username: string;
+    }
 }
 
 async function register(username: string, password: string): Promise<Response<RegisterSuccess>> {

@@ -20,6 +20,7 @@ export const useUserStore = defineStore("user", () => {
     async function login(username: string, password: string): Promise<void> {
         const response = await Services.auth.login(username, password);
         if (response.status === 200) {
+            currentUser.value = response.data.user;
             accessToken.value = response.data.token;
         } else {
             throw new Error("Could not login.")
