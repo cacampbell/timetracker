@@ -2,7 +2,7 @@ import { ref } from "vue";
 import { defineStore } from "pinia";
 import Timesheet from "../models/timesheet";
 import LineItem from "../models/lineitem"
-import Services from "services";
+import Services from "../services";
 
 
 export const useTimesheetStore = defineStore("timesheet", () => {
@@ -61,6 +61,8 @@ export const useTimesheetStore = defineStore("timesheet", () => {
     }
 
     return {
+        currentTimesheet,
+        currentLineitems,
         createTimesheet,
         createLineitem,
         saveTimesheet,
