@@ -22,3 +22,5 @@ async function register(username: string, password: string): Promise<Response<Re
 async function login(username: string, password: string): Promise<Response<LoginSuccess>> {
     return await http.post<Response<LoginSuccess>>("login", { username, password });
 }
+
+export default { register, login }

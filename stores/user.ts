@@ -1,7 +1,7 @@
-import User from "models/user";
-import { defineStore } from "pinia";
-import { Services } from "services";
 import { ref } from "vue";
+import { defineStore } from "pinia";
+import User from "../models/user";
+import Services from "../services";
 
 export const useUserStore = defineStore("user", () => {
     const currentUser = ref<User | null>(null);

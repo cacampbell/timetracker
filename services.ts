@@ -9,3 +9,5 @@ export const Services = {
     user: userController,
     auth: authController
 }
+
+export default Services
