@@ -8,3 +8,5 @@ async function get(id: string): Promise<Response<User>> {
 async function remove(id: string): Promise<Response<void>> {
     return await http.delete<Response<void>>(`user/${id}`);
 }
+
+export default { get, remove }

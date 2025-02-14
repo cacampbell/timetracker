@@ -41,9 +41,6 @@ importers:
       pinia:
         specifier: ^2.3.1
         version: 2.3.1(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3))
-      pinia-orm:
-        specifier: ^1.10.1
-        version: 1.10.1(pinia@2.3.1(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3)))(vue@3.5.13(typescript@5.7.3))
       postcss:
         specifier: ^8.5.2
         version: 8.5.2
@@ -315,9 +312,6 @@ packages:
   '@nodelib/fs.walk@1.2.8':
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
-
-  '@pinia-orm/normalizr@1.10.1':
-    resolution: {integrity: sha512-DZ4CJBd3JbS0YtmDGXMcJPWXVjI+8/kMxUA9DhIC2DX1nLZISIGRFz+KF1achMIG3ZcdN73Zy5oxjBAEqg630w==}
 
   '@rollup/rollup-android-arm-eabi@4.34.6':
     resolution: {integrity: sha512-+GcCXtOQoWuC7hhX1P00LqjjIiS/iOouHXhMdiDSnq/1DGTox4SpUvO52Xm+div6+106r+TcvOeo/cxvyEyTgg==}
@@ -1282,11 +1276,6 @@ packages:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
 
-  pinia-orm@1.10.1:
-    resolution: {integrity: sha512-SMbisL10EF+vIj1tj+r5kpWhzs29Bm8V7wSwJ2JZpDfVKWpwZyTDpSQVgBZNKDaT3707NTF/AWeWn3O88XptWg==}
-    peerDependencies:
-      pinia: ^2.1.7
-
   pinia@2.3.1:
     resolution: {integrity: sha512-khUlZSwt9xXCaTbbxFYBKDc/bWAGWJjOgvxETwkTN7KRm66EeT1ZdZj6i2ceh9sP2Pzqsbc704r2yngBrxBVug==}
     peerDependencies:
@@ -1772,8 +1761,6 @@ snapshots:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.19.0
-
-  '@pinia-orm/normalizr@1.10.1': {}
 
   '@rollup/rollup-android-arm-eabi@4.34.6':
     optional: true
@@ -2804,15 +2791,6 @@ snapshots:
   picocolors@1.1.1: {}
 
   picomatch@2.3.1: {}
-
-  pinia-orm@1.10.1(pinia@2.3.1(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3)))(vue@3.5.13(typescript@5.7.3)):
-    dependencies:
-      '@pinia-orm/normalizr': 1.10.1
-      pinia: 2.3.1(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3))
-      vue-demi: 0.14.10(vue@3.5.13(typescript@5.7.3))
-    transitivePeerDependencies:
-      - '@vue/composition-api'
-      - vue
 
   pinia@2.3.1(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3)):
     dependencies:

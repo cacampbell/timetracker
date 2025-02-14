@@ -6,7 +6,7 @@ async function get(id: string): Promise<Response<LineItem>> {
 }
 
 async function create(lineitem: LineItem): Promise<Response<void>> {
-    return await http.post<Response<void>>("lineitem", lineitem.$toJson())
+    return await http.post<Response<void>>("lineitem", lineitem)
 }
 
 async function save(lineitem: LineItem): Promise<Response<LineItem>> {
@@ -16,3 +16,5 @@ async function save(lineitem: LineItem): Promise<Response<LineItem>> {
 async function remove(id: string): Promise<Response<void>> {
     return await http.delete<Response<void>>(`lineitem/${id}`);
 }
+
+export default { get, create, save, remove }

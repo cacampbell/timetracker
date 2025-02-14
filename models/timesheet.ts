@@ -1,27 +1,9 @@
-import { Model } from "pinia-orm"
-import User from "./user.ts"
-import LineItem from "./lineitem.ts"
-
-export default class Timesheet extends Model {
-    static entity = "timesheet"
-
-    static fields () {
-        return {
-            id: this.uid(),
-            user: this.belongsTo(User, 'userId'),
-            lineitems: this.hasMany(LineItem, 'lineItemId'),
-            description: this.string(""),
-            rate: this.number(0),
-            totalTime: this.number(0),
-            totalCost: this.number(0)
-        }
-    }
-
-    declare id: string;
-    declare userId: string;
-    declare lineItemId: string[];
-    declare description: string;
-    declare rate: number;
-    declare totalTime: number;
-    declare totalCost: number;
+export default interface Timesheet {
+    id: string;
+    userId?: string;
+    lineitemIds?: string[];
+    description: string;
+    rate: number;
+    totalTime: number;
+    totalCost: number;
 }
