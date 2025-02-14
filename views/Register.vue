@@ -1,5 +1,6 @@
 <script setup lang="ts">
     import { ref } from "vue"
+    import { AxiosError } from "axios";
     import { useUserStore } from "../stores/user"
     
     const userStore = useUserStore()
@@ -12,7 +13,16 @@
             error.value = null;
             await userStore.register(username.value, password.value)
         } catch (err) {
-            console.error(err);
+            if (err instanceof AxiosError) {
+                if (err.response?.data.error != null) {
+                    if (err.response.data.error.includes("already registered")) {
+                        error.value = "Username already registered :("
+                        return;
+                    }
+                }
+    
+            }
+
             error.value = "Could not register :("
         }
     }
